@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Camera, Globe, Phone, MapPin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
 
 type Ember = {
   id: number;
@@ -28,6 +29,7 @@ const FooterEmbers = () => {
       driftX: Math.random() * 40 - 20,
     }));
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEmbers(generatedEmbers);
   }, []);
 
@@ -117,16 +119,16 @@ const Footer = () => {
 
             <div className="flex flex-col gap-5 text-sm text-muted-foreground">
               <a
-                href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan"
+                href={siteConfig.socials.maps}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 justify-center md:justify-start hover:text-primary hover:drop-shadow-[0_0_8px_rgba(255,45,133,0.8)] transition-all duration-300"
               >
                 <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <span className="leading-relaxed max-w-[250px] text-left uppercase tracking-widest text-[10px]">
-                  298, Third Floor, Satya Niketan,
+                  {siteConfig.address.split(',').slice(0, 3).join(',')}
                   <br />
-                  South Moti Bagh, New Delhi – 110021
+                  {siteConfig.address.split(',').slice(3).join(',')}
                   <br />
                   (Opp. Sri Venkateswara College)
                 </span>
@@ -136,34 +138,31 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col gap-1">
                   <a
-                    href="tel:+919315049698"
+                    href={`tel:${siteConfig.contact.phones[0].number}`}
                     className="hover:text-primary tracking-widest transition-colors"
                   >
-                    +91 93150 49698 (Deepak)
+                    {siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})
                   </a>
                   <a
-                    href="tel:+919991584504"
+                    href={`tel:${siteConfig.contact.phones[1].number}`}
                     className="hover:text-primary tracking-widest transition-colors"
                   >
-                    +91 99915 84504 (Mahinder)
+                    {siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-3 justify-center md:justify-start group">
                 <Mail className="w-4 h-4 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col gap-1">
-                  <a
-                    href="mailto:dk3979912@gmail.com"
-                    className="hover:text-primary tracking-widest transition-colors"
-                  >
-                    dk3979912@gmail.com
-                  </a>
-                  <a
-                    href="mailto:singhari275@gmail.com"
-                    className="hover:text-primary tracking-widest transition-colors"
-                  >
-                    singhari275@gmail.com
-                  </a>
+                  {siteConfig.contact.emails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="hover:text-primary tracking-widest transition-colors"
+                    >
+                      {email}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -181,7 +180,7 @@ const Footer = () => {
 
             <div className="flex gap-4 justify-center md:justify-start">
               <a
-                href="https://www.instagram.com/sharrazzcafe/?hl=en"
+                href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -191,7 +190,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan"
+                href={siteConfig.socials.maps}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Maps"

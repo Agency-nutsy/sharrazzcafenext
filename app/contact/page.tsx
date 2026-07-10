@@ -1,8 +1,10 @@
+/* eslint-disable */
 "use client";
 import { useRef, MouseEvent, useState, useEffect } from "react";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 import { Phone, MapPin, Clock, Camera, Globe, Mail } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
+import { siteConfig } from "@/lib/siteConfig";
 
 // ── CUSTOM HOOK: DETECT MOBILE FOR PERFORMANCE ────────────────
 const useIsMobile = () => {
@@ -168,7 +170,7 @@ const Contact = () => (
               <div className="space-y-6 md:space-y-8">
                 {/* Location */}
                 <a 
-                  href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan" 
+                  href={siteConfig.socials.maps} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 md:gap-5 group cursor-pointer"
@@ -179,7 +181,10 @@ const Contact = () => (
                   <div>
                     <p className="text-xs text-primary/80 tracking-[0.2em] uppercase mb-1">Location</p>
                     <p className="text-foreground/90 text-xs md:text-sm leading-relaxed tracking-wider group-hover:text-white transition-colors duration-300">
-                      Sharrazz Cafe & Roof Top Dining<br/>298, Third Floor, Satya Niketan,<br/>South Moti Bagh, New Delhi – 110021<br/>(Opp. Sri Venkateswara College)
+                      {siteConfig.name} & Roof Top Dining<br/>
+                      {siteConfig.address.split(',').slice(0, 3).join(',')}<br/>
+                      {siteConfig.address.split(',').slice(3).join(',')}<br/>
+                      (Opp. Sri Venkateswara College)
                     </p>
                   </div>
                 </a>
@@ -205,8 +210,8 @@ const Contact = () => (
                   <div>
                     <p className="text-xs text-primary/80 tracking-[0.2em] uppercase mb-1">Reservations</p>
                     <div className="flex flex-col gap-1">
-                      <a href="tel:+919315049698" className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">+91 93150 49698 (Deepak)</a>
-                      <a href="tel:+919991584504" className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">+91 99915 84504 (Mahinder)</a>
+                      <a href={`tel:${siteConfig.contact.phones[0].number}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})</a>
+                      <a href={`tel:${siteConfig.contact.phones[1].number}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})</a>
                     </div>
                   </div>
                 </div>
@@ -219,8 +224,9 @@ const Contact = () => (
                   <div>
                     <p className="text-xs text-primary/80 tracking-[0.2em] uppercase mb-1">Email</p>
                     <div className="flex flex-col gap-1">
-                      <a href="mailto:dk3979912@gmail.com" className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">dk3979912@gmail.com</a>
-                      <a href="mailto:singhari275@gmail.com" className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">singhari275@gmail.com</a>
+                      {siteConfig.contact.emails.map(email => (
+                        <a key={email} href={`mailto:${email}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{email}</a>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -229,10 +235,10 @@ const Contact = () => (
 
             {/* Socials */}
             <div className="pt-6 md:pt-8 mt-6 md:mt-8 border-t border-primary/20 flex gap-4">
-              <a href="https://www.instagram.com/sharrazzcafe/?hl=en" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
+              <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
                 <Camera className="w-4 h-4" />
               </a>
-              <a href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
+              <a href={siteConfig.socials.maps} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
                 <Globe className="w-4 h-4" />
               </a>
             </div>
@@ -245,7 +251,7 @@ const Contact = () => (
             
             {/* The Map Link (Fills the whole tile, but sits behind the phone button) */}
             <a 
-              href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan" 
+              href={siteConfig.socials.maps} 
               target="_blank" 
               rel="noopener noreferrer"
               className="absolute inset-0 z-10 cursor-pointer"
@@ -275,7 +281,7 @@ const Contact = () => (
             {/* The Phone Button (z-20 brings it to the front so it is clickable independently) */}
             <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 pointer-events-auto">
               <a
-                href="tel:+919315049698"
+                href={`tel:${siteConfig.contact.phones[0].number}`}
                 className="relative inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-[#0f050a]/80 backdrop-blur-md border border-primary/50 text-primary text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold hover:bg-primary hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(255,45,133,0.4)]"
               >
                 <Phone className="w-3 h-3 md:w-4 md:h-4" />

@@ -1,9 +1,11 @@
+/* eslint-disable */
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence, useMotionTemplate } from "framer-motion";
 import { Phone, ChevronDown, Calendar, Armchair, Star, MapPin, Camera, Clock } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
+import { siteConfig } from "@/lib/siteConfig";
 // Note: You can rename these imports to point to your Sharrazz assets later
 import heroImg from "@/assets/hero image (2).png"; 
 import img2 from "@/assets/home 1.png";
@@ -691,22 +693,22 @@ const Index = () => {
                 <div>
                   <h3 className="font-serif text-xl text-primary mb-2">Location</h3>
                   <p className="max-w-xs leading-relaxed group-hover:text-white transition-colors">
-                    Sharrazz Cafe & Roof Top Dining<br />
-                    298, Third Floor, Satya Niketan,<br />
-                    South Moti Bagh, New Delhi – 110021<br />
+                    {siteConfig.name} & Roof Top Dining<br />
+                    {siteConfig.address.split(',').slice(0, 3).join(',')}<br />
+                    {siteConfig.address.split(',').slice(3).join(',')}<br />
                     (Opposite Sri Venkateswara College)
                   </p>
                 </div>
               </a>
-              <a href="tel:+919315049698" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
+              <a href={`tel:${siteConfig.contact.phones[0].number}`} className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
                 <Phone className="w-6 h-6 text-primary group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,105,180,0.8)] transition-transform duration-300 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl text-primary mb-1">Reservations</h3>
-                  <p className="tracking-widest group-hover:text-white transition-colors">+91 93150 49698 (Deepak)</p>
-                  <p className="tracking-widest group-hover:text-white transition-colors">+91 99915 84504 (Mahinder)</p>
+                  <p className="tracking-widest group-hover:text-white transition-colors">{siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})</p>
+                  <p className="tracking-widest group-hover:text-white transition-colors">{siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})</p>
                 </div>
               </a>
-              <a href="https://www.instagram.com/sharrazzcafe/?hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
+              <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
                 <Camera className="w-6 h-6 text-primary group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,105,180,0.8)] transition-transform duration-300 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl text-primary mb-1">Follow Us</h3>

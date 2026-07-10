@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -48,6 +49,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileOpen(false);
   }, [pathname]);
 
@@ -120,7 +122,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-6">
             <motion.a
-              href="tel:+919315049698"
+              href={`tel:${siteConfig.contact.phones[0].number}`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="hidden lg:flex items-center gap-3 px-8 py-3 border border-primary/30 rounded-sm text-[10px] uppercase tracking-[0.2em] font-bold text-primary hover:bg-primary hover:text-[#0f050a] transition-all duration-500 hover:shadow-[0_0_20px_rgba(255,45,133,0.4)]"
@@ -198,17 +200,17 @@ const Navbar = () => {
                 Reservations
               </p>
               <a
-                href="tel:+919315049698"
+                href={`tel:${siteConfig.contact.phones[0].number}`}
                 className="font-serif text-3xl text-primary hover:text-white transition-colors"
               >
-                +91 93150 49698 (Deepak)
+                {siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})
               </a>
               <br />
               <a
-                href="tel:+919991584504"
+                href={`tel:${siteConfig.contact.phones[1].number}`}
                 className="font-serif text-3xl text-primary hover:text-white transition-colors"
               >
-                +91 99915 84504 (Mahinder)
+                {siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})
               </a>
             </div>
           </motion.div>
