@@ -229,7 +229,7 @@ const Contact = () => (
 
             {/* Socials */}
             <div className="pt-6 md:pt-8 mt-6 md:mt-8 border-t border-primary/20 flex gap-4">
-              <a href="https://www.instagram.com/sharrazzcafe/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
+              <a href="https://www.instagram.com/sharrazzcafe/?hl=en" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">
                 <Camera className="w-4 h-4" />
               </a>
               <a href="https://maps.google.com/?q=Sharrazz+Cafe+Satya+Niketan" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-primary/20 text-primary hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,133,0.6)]">

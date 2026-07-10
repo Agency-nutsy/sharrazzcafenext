@@ -706,7 +706,7 @@ const Index = () => {
                   <p className="tracking-widest group-hover:text-white transition-colors">+91 99915 84504 (Mahinder)</p>
                 </div>
               </a>
-              <a href="https://www.Camera.com/sharrazzcafe/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
+              <a href="https://www.instagram.com/sharrazzcafe/?hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">
                 <Camera className="w-6 h-6 text-primary group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,105,180,0.8)] transition-transform duration-300 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl text-primary mb-1">Follow Us</h3>

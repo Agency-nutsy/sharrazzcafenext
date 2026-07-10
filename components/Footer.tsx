@@ -181,7 +181,7 @@ const Footer = () => {
 
             <div className="flex gap-4 justify-center md:justify-start">
               <a
-                href="https://www.instagram.com/sharrazzcafe/"
+                href="https://www.instagram.com/sharrazzcafe/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
