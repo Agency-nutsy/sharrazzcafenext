@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f050a;
+  --foreground: #fdf6e3;
+
+  --card: #16080f;
+  --card-foreground: #fdf6e3;
+
+  --popover: #16080f;
+  --popover-foreground: #fdf6e3;
+
+  --primary: #ff2d85;
+  --primary-foreground: #0f050a;
+
+  --secondary: #24101a;
+  --secondary-foreground: #fdf6e3;
+
+  --muted: #24101a;
+  --muted-foreground: #b8a8ae;
+
+  --accent: #ff2d85;
+  --accent-foreground: #0f050a;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #3a1828;
+  --input: #3a1828;
+  --ring: #ff2d85;
+
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(255, 45, 133, 0.35);
+  color: #ffffff;
+}
