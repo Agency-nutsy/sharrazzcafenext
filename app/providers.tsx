@@ -12,7 +12,7 @@ import CustomCursor from "@/components/CustomCursor";
 import GrainOverlay from "@/components/GrainOverlay";
 import FloatingWidgets from "@/components/FloatingWidgets";
 
-const pageVariants = {
+const pageVariants = { 
   initial: { opacity: 0, filter: "blur(6px)" },
   animate: { opacity: 1, filter: "blur(0px)" },
   exit: { opacity: 0, filter: "blur(6px)" },

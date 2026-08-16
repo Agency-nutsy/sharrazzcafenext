@@ -239,7 +239,7 @@ const About = () => {
               Perched on the 3rd floor, our rooftop offers an panoramic view of the neighborhood, providing the perfect backdrop for long conversations, birthday celebrations, or a quiet date under the stars. 
             </SmolderingText>
             <SmolderingText>
-              We believe that good food shouldn't have a curfew. That's why we stay open until 1:00 AM, serving up our signature pastas, sizzling snacks, and refreshing shakes to the night owls and early risers alike. 
+              We believe that good food shouldn't have a curfew. That's why we stay open until 4:00 AM, serving up our signature pastas, sizzling snacks, and refreshing shakes to the night owls and early risers alike. 
             </SmolderingText>
 
             <motion.div
@@ -258,7 +258,7 @@ const About = () => {
               <div className="flex items-center gap-3 text-primary group cursor-default">
                 <Clock className="w-5 h-5 shrink-0 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,45,133,0.8)] transition-all" />
                 <p className="text-foreground/80 text-sm tracking-widest uppercase group-hover:text-white transition-colors">
-                  Open Every Day · 11:00 AM – 01:00 AM
+                  Open Every Day · 12:00 PM – 04:00 AM
                 </p>
               </div>
             </motion.div>

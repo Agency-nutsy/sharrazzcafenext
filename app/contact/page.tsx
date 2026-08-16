@@ -197,7 +197,7 @@ const Contact = () => (
                   <div>
                     <p className="text-xs text-primary/80 tracking-[0.2em] uppercase mb-1">Hours</p>
                     <p className="text-foreground/90 text-xs md:text-sm tracking-wider">
-                      Mon – Sun<br/>11:00 AM – 1:00 AM
+                      Mon – Sun<br/>12:00 PM – 4:00 AM
                     </p>
                   </div>
                 </div>
@@ -210,8 +210,9 @@ const Contact = () => (
                   <div>
                     <p className="text-xs text-primary/80 tracking-[0.2em] uppercase mb-1">Reservations</p>
                     <div className="flex flex-col gap-1">
-                      <a href={`tel:${siteConfig.contact.phones[0].number}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})</a>
-                      <a href={`tel:${siteConfig.contact.phones[1].number}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})</a>
+                      {siteConfig.contact.phones.map(phone => (
+                        <a key={phone.number} href={`tel:${phone.number}`} className="text-foreground/90 text-xs md:text-sm tracking-widest hover:text-white transition-colors">{phone.display} ({phone.label})</a>
+                      ))}
                     </div>
                   </div>
                 </div>

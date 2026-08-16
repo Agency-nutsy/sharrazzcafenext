@@ -1632,7 +1632,7 @@ const Menu = () => {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_10px_rgba(255,45,133,0.5)]" />
               <p className="text-muted-foreground text-xs uppercase tracking-[0.3em] mb-8">Ready to secure a rooftop table?</p>
               <a
-                href="tel:+919315049698"
+                href="tel:+919991584504"
                 className="relative inline-flex items-center gap-3 px-10 py-4 overflow-hidden group border border-primary/30 rounded-sm hover:shadow-[0_0_20px_rgba(255,45,133,0.4)] transition-all duration-500"
               >
                 <span className="absolute inset-0 bg-primary/10 group-hover:bg-primary transition-colors duration-500" />

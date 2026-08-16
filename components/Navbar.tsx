@@ -199,19 +199,15 @@ const Navbar = () => {
               <p className="text-primary/40 text-[10px] uppercase tracking-[0.5em] mb-2">
                 Reservations
               </p>
-              <a
-                href={`tel:${siteConfig.contact.phones[0].number}`}
-                className="font-serif text-3xl text-primary hover:text-white transition-colors"
-              >
-                {siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})
-              </a>
-              <br />
-              <a
-                href={`tel:${siteConfig.contact.phones[1].number}`}
-                className="font-serif text-3xl text-primary hover:text-white transition-colors"
-              >
-                {siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})
-              </a>
+              {siteConfig.contact.phones.map((phone) => (
+                <a
+                  key={phone.number}
+                  href={`tel:${phone.number}`}
+                  className="font-serif text-3xl text-primary hover:text-white transition-colors block"
+                >
+                  {phone.display} ({phone.label})
+                </a>
+              ))}
             </div>
           </motion.div>
         )}

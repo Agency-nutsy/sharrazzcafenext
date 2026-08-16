@@ -137,18 +137,15 @@ const Footer = () => {
               <div className="flex items-center gap-3 justify-center md:justify-start group">
                 <Phone className="w-4 h-4 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col gap-1">
-                  <a
-                    href={`tel:${siteConfig.contact.phones[0].number}`}
-                    className="hover:text-primary tracking-widest transition-colors"
-                  >
-                    {siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})
-                  </a>
-                  <a
-                    href={`tel:${siteConfig.contact.phones[1].number}`}
-                    className="hover:text-primary tracking-widest transition-colors"
-                  >
-                    {siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})
-                  </a>
+                  {siteConfig.contact.phones.map((phone) => (
+                    <a
+                      key={phone.number}
+                      href={`tel:${phone.number}`}
+                      className="hover:text-primary tracking-widest transition-colors"
+                    >
+                      {phone.display} ({phone.label})
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="flex items-center gap-3 justify-center md:justify-start group">

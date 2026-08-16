@@ -262,7 +262,7 @@ const GlowingMarquee = () => {
 
 const stats = [
   { icon: Armchair, label: "Seating Setup", end: 100, prefix: "", suffix: "+" },
-  { icon: Clock, label: "Late Night Open", end: 1, prefix: "Till ", suffix: " AM", isTime: true },
+  { icon: Clock, label: "Late Night Open", end: 4, prefix: "Till ", suffix: " AM", isTime: true },
   { icon: Star, label: "Google Rated", end: 4.4, prefix: "", suffix: "★", isDecimal: true },
   { icon: Calendar, label: "Open Everyday", end: 0, prefix: "", isText: true },
 ];
@@ -374,7 +374,7 @@ const PremiumHeading = ({ title }: { title: string }) => {
 const experiences = [
   { title: "Aesthetic Rooftop Dining", desc: "Relax under the open sky with light music and the perfect vibe for your evening out or a cozy date.", img:"/home/rooftop.jpg" },
   { title: "Perfect for College Hangouts", desc: "Located right opposite Venky College, making it the ultimate and pocket-friendly spot to catch up with friends.", img: "/home/college.jpg" },
-  { title: "Late Night Cravings Sorted", desc: "Open till 3:00 AM! Satisfy those midnight cravings with our delicious pastas, pizzas, and signature shakes.", img: img4.src },
+  { title: "Late Night Cravings Sorted", desc: "Open till 4:00 AM! Satisfy those midnight cravings with our delicious pastas, pizzas, and signature shakes.", img: img4.src },
 ];
 
 const reviews = [
@@ -486,7 +486,7 @@ const Index = () => {
             "@type": "Restaurant",
             "name": "Sharrazz Cafe",
             "image": "https://www.sharrazzcafe.com/home/college.jpg",
-            "telephone": "+919315049698",
+            "telephone": "+919991584504",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "298, 3rd Floor, Opposite Sri Venkateswara College, Satya Niketan",
@@ -501,8 +501,8 @@ const Index = () => {
                 "dayOfWeek": [
                   "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
                 ],
-                "opens": "11:00",
-                "closes": "03:00"
+                "opens": "12:00",
+                "closes": "04:00"
               }
             ],
             "url": "https://www.sharrazzcafe.com"
@@ -572,7 +572,7 @@ const Index = () => {
               <MagneticButton href="/menu" className="btn-gold px-8 py-3 rounded text-sm tracking-widest uppercase font-semibold explore-menu-pink hero-equal-btn">
                 Explore Menu
               </MagneticButton>
-              <MagneticButton href="tel:+919315049698" className="px-8 py-3 rounded border border-primary/60 text-primary text-sm tracking-widest uppercase font-semibold hover:bg-primary hover:text-black transition-colors bg-[#0f050a]/60 backdrop-blur-sm shadow-[0_0_15px_rgba(255,105,180,0.3)] hero-equal-btn reserve-outline-btn">
+              <MagneticButton href="tel:+919991584504" className="px-8 py-3 rounded border border-primary/60 text-primary text-sm tracking-widest uppercase font-semibold hover:bg-primary hover:text-black transition-colors bg-[#0f050a]/60 backdrop-blur-sm shadow-[0_0_15px_rgba(255,105,180,0.3)] hero-equal-btn reserve-outline-btn">
                 <Phone className="w-4 h-4" />Call to Reserve
               </MagneticButton>
             </motion.div>
@@ -704,8 +704,9 @@ const Index = () => {
                 <Phone className="w-6 h-6 text-primary group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,105,180,0.8)] transition-transform duration-300 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl text-primary mb-1">Reservations</h3>
-                  <p className="tracking-widest group-hover:text-white transition-colors">{siteConfig.contact.phones[0].display} ({siteConfig.contact.phones[0].label})</p>
-                  <p className="tracking-widest group-hover:text-white transition-colors">{siteConfig.contact.phones[1].display} ({siteConfig.contact.phones[1].label})</p>
+                  {siteConfig.contact.phones.map((phone) => (
+                    <p key={phone.number} className="tracking-widest group-hover:text-white transition-colors">{phone.display} ({phone.label})</p>
+                  ))}
                 </div>
               </a>
               <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:text-primary transition-colors duration-300 group">

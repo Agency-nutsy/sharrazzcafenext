@@ -8,7 +8,7 @@ const FloatingWidgets = () => {
       
       {/* --- WHATSAPP BUTTON (Icon Only) --- */}
       <motion.a
-        href="https://wa.me/919315049698" 
+        href="https://wa.me/919991584504" 
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
